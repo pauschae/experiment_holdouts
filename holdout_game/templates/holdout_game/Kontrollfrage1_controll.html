@@ -1,0 +1,20 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Aussage 1 {% endblock %}
+
+{% block content %}
+
+<h3>
+  Ist die folgende Aussage wahr oder falsch?
+</h3>
+
+<p>
+    Sie haben kosten von 0 und fordern Kompensation. Ihr Mitspieler fordert keine Kompensation. Die Reform wird durchgeführt und sie bekommen eine Auszahlung von 20.
+</p>
+
+{% formfield player.q1 %}
+
+{% next_button %}
+
+{% endblock %}

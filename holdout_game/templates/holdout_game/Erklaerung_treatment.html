@@ -1,0 +1,86 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Das Reform Spiel {% endblock %}
+
+{% block content %}
+
+<p>
+    Im folgenden Spiel soll eine Entscheidung über die Durchfürung einer politischen Reform getroffen werden.
+    Für sie und ihren Mitspieler entstehen potentiell Kosten aus dieser Reform. Mit einer warscheinlichkeit von {{ Constants.p }} kostet sie die durchführung der Reform
+    {{ Constants.cbar }} Taler. Mit einer Warscheinlichkeit von {{ Constants.prev }} kostet sie diese Reform nichts. Ihr Mitspiel befindet sich in der selben Situation wie sie.
+    Es stehen {{ Constants.v }} Taler zur Verfügung um sie beide zu kompensieren.
+</p>
+<p>
+    Im folgenden werden ihnen ihre durch die Reform entstehenden Kosten mitgeteilt. Anschließend müssen sie ihrem Mitspieler eine Nachricht schicken
+    Sie haben dabei die Auswahl aus den folgenden Nachrichten:
+</p>
+<ol>
+    <li>Ich habe keine Kosten aus der Reform. Du kannst mir vertrauen.</li>
+    <li>Die Reform kostet mich 20 Taler. Du kannst mir vertrauen.</li>
+</ol>
+Die Nachricht die sie gesendet haben wird ihrem Mitspieler anchließend angezeigt. Sie wird zusätzlich dazu verwendet das ihre Auszahlunbg zu bestimmen.
+
+<p>
+Die folgende Tabelle gibt ihnen eine Übersicht über ihre Auszahlungen für den Fall das ihnen keine Kosten aus der Reform entstehen.
+In der ersten Spalte finden sie ihre eigen Angabe über ihre Kosten. In der ersten Zeile finden sie die Angabe ihres Mitspielers über seine Kosten.
+Fals sie Kosten von 20 angeben und ihr Mitspieler gibt Kosten von 0 an erhalten sie eine Auszahlung von 20 Talern.
+</p>
+<style type="text/css">
+table.fixed {border-collapse:collapse;border-spacing:0;}
+table.fixed td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+table.fixed th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+table.fixed .tg-yw4l{vertical-align:top}
+table.fixed {table-layout:fixed; width:270px;}/*Setting the table width is important!*/
+table.fixed td {overflow:hidden;}/*Hide text outside the cell.*/
+</style>
+<table class="fixed">
+  <tr>
+    <th class="tg-yw4l"></th>
+    <th class="tg-yw4l">keine Kompensation</th>
+    <th class="tg-yw4l">Kompensation</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">keine Kompensation</td>
+    <td class="tg-yw4l">15</td>
+    <td class="tg-yw4l">10</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Kompensation</td>
+    <td class="tg-yw4l">20</td>
+    <td class="tg-yw4l">0</td>
+  </tr>
+</table>
+
+<p>
+    Die folgende Tabelle enthält ihre Auszahlung für den Fall das ihnen Kosten von 20 aus der Reform entstehen.
+</p>
+<style type="text/css">
+table.fixed {border-collapse:collapse;border-spacing:0;}
+table.fixed td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+table.fixed th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+table.fixed .tg-yw4l{vertical-align:top}
+table.fixed {table-layout:fixed; width:300px;}/*Setting the table width is important!*/
+table.fixed td {overflow:hidden;}/*Hide text outside the cell.*/
+</style>
+<table class="fixed">
+  <tr>
+    <th class="tg-yw4l"></th>
+    <th class="tg-yw4l">keine Kompensation</th>
+    <th class="tg-yw4l">Kompensation</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">keine Kompensatiob</td>
+    <td class="tg-yw4l">15-20 = -5</td>
+    <td class="tg-yw4l">10-20 = -10</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Kompensation</td>
+    <td class="tg-yw4l">20-20 = 0</td>
+    <td class="tg-yw4l">0</td>
+  </tr>
+</table>
+
+{% next_button %}
+
+{% endblock %}

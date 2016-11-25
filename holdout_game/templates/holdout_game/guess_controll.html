@@ -1,0 +1,18 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Angabe der Kosten {% endblock %}
+
+{% block content %}
+
+<p>
+    Nehmen sie an ihrem Mitspieler entstehen keine Kosten durch die Reform. Denken sie er fordert trotzdem eine Kompensation?
+    Im Fall das ihrem Mitspieler tatsächlich keine Kosten entstehen bekommen sie für die richtige Antwort eine zusätzliche Auszahlung von 10 Talern.
+</p>
+
+
+{% formfield player.kompensation_guess %}
+
+{% next_button %}
+
+{% endblock %}

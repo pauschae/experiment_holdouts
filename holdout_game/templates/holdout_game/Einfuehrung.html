@@ -1,0 +1,62 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Allgemeine Instruktionen {% endblock %}
+
+{% block content %}
+
+<h3>Liebe Studienteilnehmerin, </br> Lieber Studienteilnehmer,</h3>
+
+
+<p> herzlich Willkommen und vielen Dank für Ihre Teilnahme an unserem heutigen Experiment. Bitte stellen Sie während des Experiments sicher, dass: </p>
+
+<ul type="disc">
+    <li>Sie nicht mit anderen Teilnehmern sprechen. 1</li>
+    <li>Ihr Mobiltelefon ausgeschaltet ist.</li>
+    <li>Sie keine Notizen machen.</li>
+</ul>
+
+ <p>
+ Sollten Sie während des Experiments Fragen haben, heben Sie bitte Ihre Hand. Ein Studienleiter wird dann zu Ihrem Platz kommen, um Ihre Frage zu beantworten.
+</p>
+
+<p>
+Im laufe des Experiments werden sie 2 Spiele mit jeweils einem anderen zufällig ausgewähltem Mitspieler spielen.
+Um ihren Mitspielern zu ermöglichen sie besser kennenzulernen müssen sie zu Beginn ders Experiments einige Fragen zu ihrer Person beantworten.
+Dannach werden sie einem zufälligen Mitspieler zugeteil mit dem sie das erste Spiel spielen werden. Vor dem spielen des ersten Spiels bekommen sie einige Informationen über ihren Mitspieler.
+Dannach werden ihnen die Regeln erklärt und sie spielen das Spiel. Nach ende des ersten Spiels bekommen sie einen neuen Mitspieler. Auch diesen dürfen sie wieder basierend auf seinen Antowrten im Fragebogen kennenlernen.
+</p>
+
+
+<p>
+Von beiden Spielen wird zufällig eines zur Auszahlung ausgewählt. Ihre Auszahlung entspricht der Auszahlung dieses Spiels zuzüglich einer Zufallskomponente.
+</p>
+
+
+ <p>
+    Der Ablauf des Experiments ist also wie folgt:
+ </p>
+
+<ol>
+    <li> Fragebogen </li>
+    <li> Spiel 1:
+        <ol>
+            <li> Zulosung des Mitspielers</li>
+            <li> Kennenlernen </li>
+            <li> Spiel </li>
+        </ol>
+    </li>
+    <li> Spiel 2:
+        <ol>
+            <li> Zulosung des Mitspielers</li>
+            <li> Kennenlernen </li>
+            <li> Spiel </li>
+        </ol>
+    </li>
+    <li> Auszahlung </li>
+    <li> Ausgangsfragebogen </li>
+</ol>
+
+{% next_button %}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Kosten aus der Reform {% endblock %}
+
+{% block content %}
+
+<p>
+    Für den Fall das die Reform durchgeführt wird entstehen ihnen Kosten in Höhe von {{ player.cost }} Talern.
+</p>
+
+{% next_button %}
+
+{% endblock %}

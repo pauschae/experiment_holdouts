@@ -1,0 +1,21 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Aussage 2{% endblock %}
+
+{% block content %}
+
+<h3>
+  Ist die folgende Aussage wahr oder falsch?
+</h3>
+
+<p>
+    Sie haben Kosten von 0 und sagen ihrem Mitspieler das sie Kosten von 20 haben. Ihr Mitspieler sagt ihnen das er Kosten von 20 hat. Die Reform wird durchgeführt und sie bekommen eine Auszahlung von 20.
+</p>
+
+{% formfield player.q2 %}
+
+
+{% next_button %}
+
+{% endblock %}

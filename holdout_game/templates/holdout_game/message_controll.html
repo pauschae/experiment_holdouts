@@ -1,0 +1,18 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Angabe der Kosten {% endblock %}
+
+{% block content %}
+
+<p>
+    Nun haben sie die Möglichkeite ihre Kompensation zu fordern. Diese Angabe wird nur zur Bestimmung der Kompensationszahlungen herangezogen.
+    Das beinhaltet die Entscheidung ob die Reform durchgeführt wird.
+</p>
+
+
+{% formfield player.message with label="Wie hoch ist die von ihnen geforderte Kompensationszahlung?" %}
+
+{% next_button %}
+
+{% endblock %}
