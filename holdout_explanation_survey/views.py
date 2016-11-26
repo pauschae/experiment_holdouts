@@ -17,8 +17,15 @@ class ResultsWaitPage(WaitPage):
 class Einfuehrung(Page):
     pass
 
+class Questionaire(Page):
+    def before_next_page(self):
+        self.player.copy_text_toParticipant()
+    form_model = models.Player
+    form_fields = ['social_distance_text']
+
 
 page_sequence = [
     Einfuehrung,
-    Erklaerung
+    Erklaerung,
+    Questionaire
 ]

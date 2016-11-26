@@ -28,6 +28,8 @@ class Group(BaseGroup):
     pass
 
 class Player(BasePlayer):
+    n_right_guesses = models.PositiveIntegerField()
+    payoff_final_wguess = models.PositiveIntegerField()
     pass
 
 

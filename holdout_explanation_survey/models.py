@@ -26,4 +26,7 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    social_distance_text = models.TextField(max_length = 400)
+    def copy_text_toParticipant(self):
+        self.participant.vars['text'] = self.social_distance_text
     pass

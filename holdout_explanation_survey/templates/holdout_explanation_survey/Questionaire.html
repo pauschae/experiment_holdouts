@@ -1,0 +1,13 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Das Reform Spiel {% endblock %}
+
+{% block content %}
+Bitte stellen sie sich ihrem Mitspieler kurz vor. Dieser Text wird ihm bevor er seine Entscheidung trifft angezeigt. Sie haben dafür 400 Zeichen.
+
+    {% formfield player.social_distance_text with label=""%}
+
+{% next_button %}
+
+{% endblock %}

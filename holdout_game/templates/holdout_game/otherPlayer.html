@@ -1,0 +1,12 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Vorstellung Mitspieler {% endblock %}
+
+{% block content %}
+Ihr Mitspieler stellt sich ihnen wie folgt vor:
+    {{player.show}}
+
+{% next_button %}
+
+{% endblock %}
