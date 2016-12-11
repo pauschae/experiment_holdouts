@@ -1,0 +1,43 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Kosten aus der Reform {% endblock %}
+
+{% block content %}
+
+<p>
+    Für den Fall das die Reform durchgeführt wird entstehen Ihnen Kosten in Höhe von <b> {{ player.cost }} Talern. </b>
+</p>
+
+<p>
+Zur Erinnerung hier noch einmal eine Tabelle mit Ihren Auszahlungen abhängig von Ihrer und der Nachricht Ihres Mitspielers.
+</p>
+
+<style type="text/css">
+table.fixed {border-collapse:collapse;border-spacing:0;}
+table.fixed td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+table.fixed th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+table.fixed .tg-yw4l{vertical-align:top}
+table.fixed {table-layout:fixed; width:350px;}/*Setting the table width is important!*/
+table.fixed td {overflow:hidden;}/*Hide text outside the cell.*/
+</style>
+<table class="fixed">
+  <tr>
+    <th class="tg-yw4l"></th>
+    <th class="tg-yw4l"> <b> Kosten von 0 </b> </th>
+    <th class="tg-yw4l"> <b> Kosten von 20 </b> </th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"> <b> Kosten von 0 </b></td>
+    <td class="tg-yw4l">{{ player.aa }}</td>
+    <td class="tg-yw4l">{{ player.ab }}</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"><b> Kosten von 20 </b></td>
+    <td class="tg-yw4l">{{ player.ba }}</td>
+    <td class="tg-yw4l">{{ player.bb }}</td>
+  </tr>
+</table>
+{% next_button %}
+
+{% endblock %}

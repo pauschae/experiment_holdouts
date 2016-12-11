@@ -1,0 +1,21 @@
+participant.id_in_session,participant.code,participant.label,participant._is_bot,participant._index_in_pages,participant._max_page_index,participant._current_app_name,participant._round_number,participant._current_page_name,participant.ip_address,participant.time_started,participant.exclude_from_data_analysis,participant.visited,participant.mturk_worker_id,participant.mturk_assignment_id,player.id_in_group,player.social_distance_text,player.payoff,group.id_in_subsession,subsession.round_number,session.code,session.label,session.experimenter_name,session.time_scheduled,session.time_started,session.mturk_HITId,session.mturk_HITGroupId,session.comment,session.is_demo
+1,4e2q02rz,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:52.753741+00:00,0,1,,,1,Test,0,1,1,k8mzqu52,,,,,,,,0
+2,iqrnqoch,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:52.798945+00:00,0,1,,,2,Test,0,1,1,k8mzqu52,,,,,,,,0
+3,9os3tpx8,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:52.817061+00:00,0,1,,,3,Test,0,1,1,k8mzqu52,,,,,,,,0
+4,foj8g0bb,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:52.835306+00:00,0,1,,,4,Test,0,1,1,k8mzqu52,,,,,,,,0
+5,ru7evx3p,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:52.853692+00:00,0,1,,,5,Test,0,1,1,k8mzqu52,,,,,,,,0
+6,oq6s3ejx,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:52.871982+00:00,0,1,,,6,Test,0,1,1,k8mzqu52,,,,,,,,0
+7,tgv8f6cm,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:52.890580+00:00,0,1,,,7,Test,0,1,1,k8mzqu52,,,,,,,,0
+8,u2e5k0hu,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:52.909544+00:00,0,1,,,8,Test,0,1,1,k8mzqu52,,,,,,,,0
+9,s21tyw5p,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:52.928284+00:00,0,1,,,9,Test,0,1,1,k8mzqu52,,,,,,,,0
+10,3xcl65fg,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:52.946300+00:00,0,1,,,10,Test,0,1,1,k8mzqu52,,,,,,,,0
+11,b5ugj60a,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:52.964292+00:00,0,1,,,11,Test,0,1,1,k8mzqu52,,,,,,,,0
+12,celzgivq,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:52.984412+00:00,0,1,,,12,Test,0,1,1,k8mzqu52,,,,,,,,0
+13,68oqicxs,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:53.002501+00:00,0,1,,,13,Test,0,1,1,k8mzqu52,,,,,,,,0
+14,sqx505o4,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:53.020362+00:00,0,1,,,14,Test,0,1,1,k8mzqu52,,,,,,,,0
+15,02q2wul1,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:53.038537+00:00,0,1,,,15,Test,0,1,1,k8mzqu52,,,,,,,,0
+16,2g47jqhl,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:53.056790+00:00,0,1,,,16,Test,0,1,1,k8mzqu52,,,,,,,,0
+17,grgq9dnw,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:53.074720+00:00,0,1,,,17,Test,0,1,1,k8mzqu52,,,,,,,,0
+18,vdxptg31,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:53.093483+00:00,0,1,,,18,Test,0,1,1,k8mzqu52,,,,,,,,0
+19,xyck73tj,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:53.111811+00:00,0,1,,,19,Test,0,1,1,k8mzqu52,,,,,,,,0
+20,nixlhtd8,,1,69,68,payment_info,1,PaymentInfo,127.0.0.1,2016-11-29 10:44:53.129546+00:00,0,1,,,20,Test,0,1,1,k8mzqu52,,,,,,,,0

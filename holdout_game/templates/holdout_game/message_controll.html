@@ -6,12 +6,11 @@
 {% block content %}
 
 <p>
-    Nun haben sie die Möglichkeite ihre Kompensation zu fordern. Diese Angabe wird nur zur Bestimmung der Kompensationszahlungen herangezogen.
-    Das beinhaltet die Entscheidung ob die Reform durchgeführt wird.
+    Nun haben Sie die Möglichkeit Kompensation zu fordern. Diese Angabe wird nur zur Bestimmung der Kompensationszahlungen herangezogen.
+    Dass beinhaltet die Entscheidung ob die Reform durchgeführt wird. Zur Erinnerung ihre Kosten sind {{ player.cost }}.
 </p>
 
-
-{% formfield player.message with label="Wie hoch ist die von ihnen geforderte Kompensationszahlung?" %}
+{% formfield player.message_c with label="Fordern sie Kompensation?" %}
 
 {% next_button %}
 

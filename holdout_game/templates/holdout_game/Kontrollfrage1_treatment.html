@@ -10,11 +10,11 @@
 </h3>
 
 <p>
-    Sie haben kosten von 0 und sagen ihrem Mitspieler das sie Kosten von 0 haben. Ihr Mitspieler sagt ihnen das er Kosten von 0 hat. Die Reform wird durchgeführt und sie bekommen eine Auszahlung von 20.
+    Sie haben Kosten von 0 Talern und sagen ihrem Mitspieler das sie Kosten von 0 Talern haben. Ihr Mitspieler sagt Ihnen das er Kosten von 0 Talern hat. Die Reform wird durchgeführt und Sie bekommen eine Auszahlung von {{ Constants.vhalf }} Talern.
 </p>
 
 
-{% formfield player.q1 %}
+{% formfield player.q1 with label=""%}
 {% next_button %}
 
 {% endblock %}

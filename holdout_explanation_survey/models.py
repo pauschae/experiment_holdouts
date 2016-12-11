@@ -15,6 +15,10 @@ class Constants(BaseConstants):
     name_in_url = 'holdout_explanation_survey'
     players_per_group = None
     num_rounds = 1
+    p = 0.1
+    prev = 1 - p
+    cbar = 20
+    v = 30
 
 
 class Subsession(BaseSubsession):

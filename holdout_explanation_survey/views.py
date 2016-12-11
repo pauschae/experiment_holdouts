@@ -4,8 +4,7 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 
 
-class Erklaerung(Page):
-    pass
+
 
 
 class ResultsWaitPage(WaitPage):
@@ -26,6 +25,5 @@ class Questionaire(Page):
 
 page_sequence = [
     Einfuehrung,
-    Erklaerung,
     Questionaire
 ]

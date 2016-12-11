@@ -1,26 +1,33 @@
 {% extends "global/Base.html" %}
 {% load staticfiles otree_tags %}
 
-{% block title %} Das Reform Spiel {% endblock %}
+{% block title %} Spiel {{ subsession.round_number }} {% endblock %}
 
 {% block content %}
 
+   <div class="instructions well well-lg">
+
 <p>
-    Im folgenden Spiel soll eine Entscheidung über die Durchfürung einer politischen Reform getroffen werden.
-    Für sie und ihren Mitspieler entstehen potentiell Kosten aus dieser Reform. Mit einer warscheinlichkeit von {{ Constants.p }} kostet sie die durchführung der Reform
-    {{ Constants.cbar }} Taler. Mit einer warscheinlichkeit von {{ Constants.prev }} kostet sie diese Reform nichts. Ihr Mitspiel befindet sich in der selben Situation wie sie.
-    Es stehen {{ Constants.v }} Taler zur Verfügung um sie beide zu kompensieren.
+    Sie befinden sich in der zu Beginn beschrieben Situation. Im Folgenden werden Ihnen Ihre durch die Reform entstehenden Kosten mitgeteilt.
+    Danach können Sie eine Kompensation in Höhe von {{Constants.cbar}} Talern für die Ihnen durch die Durchführung einer Reform entstehenden Kosten fordern.
+    Wenn beide Spieler Kompensation fordern wird die Reform nicht umgesetzt und Sie und Ihr Mitspieler bekommen eine Kompensationszahlung von 0 Talern.
+    Wenn die geforderte Kompensation das Budget nicht übersteigt wird zuerst der Spieler der eine Kompensation gefordert hat in Höhe von {{Constants.cbar}} Talern kompensiert.
+    Das verbleibende Budget wird für die Kompensationszahlung an den anderen Spieler verwendet. Falls keiner der beiden Spieler eine Kompensation gefordert hat bekommt jeder Spieler {{Constants.vhalf}} Taler ausgezahlt.
+    Es wird also immer wenn die Reform stattfindet in Summe das gesamte Budget von {{Constants.v}} Taler für Kompensationszahlungen and die beiden Spieler verwendet.
 </p>
 <p>
-    Im folgenden werden ihnen ihre durch die Reform entstehenden Kosten mitgeteilt. Dannach können sie eine Kompensation in Höhe von 20 Talern für die ihnen entstandenen Kosten fordern.
-    Im Fall das die Summe der geforderten Kompensation den gesamtgesellchaftlichen Nutzen übersteigt wird die Reform nicht umgesetzt und Sie und Ihr Mitspieler bekommen eine Auszahlung von 0 Talern.
-    Im Fall das die geforderte Kompensation den gesellschaftlichen Nutzen nicht übersteigt wird zuerst der Spieler der eine Kompensation gefordert hat in Höhe von 20 Talern kompensiert.
-    Das verbleibende Budget wird an den anderen Spieler ausgezahlt. Fals keiner der beiden Spieler eine Kompensation gefordert hat bekommt jeder 15 Taler ausgezahlt.
+    Wenn die Reform nicht durchgeführt wird entstehen ihnen keine Kosten und es wird keine Kompensation bezahlt. Ihre Auszahlung aus diesem Spiel sind also 0 Taler.
+    Wenn die Reform durchgeführt wird entspricht ihre Auszahlung aus diesem Spiel ihrer Kompensationszahlung abzüglich der Kosten die ihnen aus der Reform entstehen.
 </p>
+
+    </div class="instructions well well-lg">
+
 <p>
-Die folgende Tabelle gibt ihnen eine Übersicht über ihre Auszahlungen für den fall das ihnen keine Kosten aus der Reform entstehen.
-In der ersten Spalte finden sie ihre eigen Angabe über ihre kosten. In der ersten Zeile finden sie die Angabe ihres Mitspielers über seine Kosten.
-Fals sie Kosten von 20 angeben und ihr Mitspieler gibt kosten von 0 an erhalten sie eine Auszahlung von 20 Talern.
+Die folgende Tabelle gibt Ihnen eine Übersicht über <b> Ihre </b> Auszahlungen in Talern für den Fall, dass Ihnen <b> keine Kosten </b> aus der Reform entstehen.
+Die Zeile der Tabelle gibt an ob sie Kompensation gefordert haben. Die Spalte der Tabelle gibt an ob Ihr Mitspieler Kompensation gefordert hat.
+Wenn Sie ablesen möchten was ihre Auszahlung ist wenn Sie und ihr Mitspieler beide Kompensation fordern können Sie das in der zweiten Spalte der zweiten Zeile der Tabelle
+nachlesen (0 Taler).
+
 </p>
 <style type="text/css">
 table.fixed {border-collapse:collapse;border-spacing:0;}
@@ -33,46 +40,47 @@ table.fixed td {overflow:hidden;}/*Hide text outside the cell.*/
 <table class="fixed">
   <tr>
     <th class="tg-yw4l"></th>
-    <th class="tg-yw4l">keine Kompensation</th>
-    <th class="tg-yw4l">Kompensation</th>
+    <th class="tg-yw4l"> <b> keine Kompensation </b> </th>
+    <th class="tg-yw4l"> <b> Kompensation </b></th>
   </tr>
   <tr>
-    <td class="tg-yw4l">keine Kompensation</td>
-    <td class="tg-yw4l">15</td>
-    <td class="tg-yw4l">10</td>
+    <td class="tg-yw4l"> <b> keine Kompensation </b> </td>
+    <td class="tg-yw4l">{{Constants.vhalf}}</td>
+    <td class="tg-yw4l">{{Constants.vminuscbar}}</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Kompensation</td>
-    <td class="tg-yw4l">20</td>
+    <td class="tg-yw4l"> <b> Kompensation </b> </td>
+    <td class="tg-yw4l">{{Constants.cbar}}</td>
     <td class="tg-yw4l">0</td>
   </tr>
 </table>
 
 <p>
-    Die folgende Tabelle enthält ihre Auszahlung für den Fall das ihnen Kosten von 20 aus der Reform entstehen.
+    Die folgende Tabelle enthält <b> Ihre </b> Auszahlung für den Fall das Ihnen <b> Kosten in Höhe von {{Constants.cbar}} Talern </b> aus der Reform entstehen.
+    Sie wird genauso gelesen wie die erste Tabelle.
 </p>
 <style type="text/css">
 table.fixed {border-collapse:collapse;border-spacing:0;}
 table.fixed td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
 table.fixed th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
 table.fixed .tg-yw4l{vertical-align:top}
-table.fixed {table-layout:fixed; width:300px;}/*Setting the table width is important!*/
+table.fixed {table-layout:fixed; width:350px;}/*Setting the table width is important!*/
 table.fixed td {overflow:hidden;}/*Hide text outside the cell.*/
 </style>
 <table class="fixed">
   <tr>
     <th class="tg-yw4l"></th>
-    <th class="tg-yw4l">keine Kompensation</th>
-    <th class="tg-yw4l">Kompensation</th>
+    <th class="tg-yw4l"> <b> keine Kompensation </b> </th>
+    <th class="tg-yw4l"> <b> Kompensation </b> </th>
   </tr>
   <tr>
-    <td class="tg-yw4l">keine Kompensatiob</td>
-    <td class="tg-yw4l">15-20 = -5</td>
-    <td class="tg-yw4l">10-20 = -10</td>
+    <td class="tg-yw4l"> <b> keine Kompensation </b></td>
+    <td class="tg-yw4l">{{Constants.vhalf}}-{{Constants.cbar}} = {{ Constants.aa }}</td>
+    <td class="tg-yw4l">{{Constants.vminuscbar}}-{{Constants.cbar}} = {{ Constants.ab }}</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Kompensation</td>
-    <td class="tg-yw4l">20-20 = 0</td>
+    <td class="tg-yw4l"><b> Kompensation </b></td>
+    <td class="tg-yw4l">{{Constants.cbar}}-{{Constants.cbar}} = {{ Constants.ba }}</td>
     <td class="tg-yw4l">0</td>
   </tr>
 </table>

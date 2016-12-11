@@ -7,5 +7,5 @@ from .models import Constants
 class PlayerBot(Bot):
 
     def play_round(self):
-        yield (views.MyPage)
-        yield (views.Results)
+        yield (views.Einfuehrung)
+        yield (views.Questionaire, {'social_distance_text' : 'Test'})

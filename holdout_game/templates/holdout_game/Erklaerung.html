@@ -1,0 +1,21 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Einführung {% endblock %}
+
+{% block content %}
+
+    <div class="instructions well well-lg">
+<p>
+    In den folgenden Spielen soll eine Entscheidung über die Durchführung einer politischen Reform getroffen werden.
+    Für Sie und ihren Mitspieler entstehen potentiell Kosten aus dieser Reform. Mit einer Wahrscheinlichkeit von {{ Constants.p }} kostet Sie die Durchführung der Reform
+    {{ Constants.cbar }} Taler. Mit einer Wahrscheinlichkeit von {{ Constants.prev }} kostet Sie diese Reform nichts. <b> Ihre Kosten aus der Reform bleiben über beide Spiele hinweg konstant. </b>
+    Ihr Mitspieler befindet sich in der selben Situation wie Sie.
+    Es steht ein Budget von {{ Constants.v }} Taler zur Verfügung um Sie beide zu kompensieren.
+</p>
+  </div class="instructions well well-lg">
+
+
+{% next_button %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}  {% endblock %}
+
+{% block content %}
+
+<p>
+Sie haben während des Experiments Kosten von 0 Talern angegeben / kein Kompensation gefordert obwohl Sie Kosten von {{ Constants.cbar }} Talern hatten.
+Warum haben Sie das getan?
+</p>
+
+{% formfield player.grave_mistake_on_purpose with label="" %}
+
+{% next_button %}
+
+{% endblock %}

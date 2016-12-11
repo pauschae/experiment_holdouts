@@ -1,0 +1,16 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Nachricht {% endblock %}
+
+{% block content %}
+
+<p>
+Ihr Mitspieler schickt Ihnen die folgende Nachricht:
+</p>
+
+{{player.partner_message_t}}
+
+{% next_button %}
+
+{% endblock %}

@@ -2,15 +2,11 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-Vielen Danke
+Vielen Dank!
 {% endblock %}
 
 {% block content %}
-
-Sie bekommen eine Auszahlung von insgesamt {{ payoff_final_wguess }}.
-
-{% endblock %}
-
-{% block form %}
+Sie bekommen eine Auszahlung von insgesamt {{ player.money }}€.
+{% next_button %}
 
 {% endblock %}

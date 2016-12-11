@@ -1,12 +1,14 @@
 {% extends "global/Base.html" %}
 {% load staticfiles otree_tags %}
 
-{% block title %} Das Reform Spiel {% endblock %}
+{% block title %} Vorstellung {% endblock %}
 
 {% block content %}
-Bitte stellen sie sich ihrem Mitspieler kurz vor. Dieser Text wird ihm bevor er seine Entscheidung trifft angezeigt. Sie haben dafür 400 Zeichen.
+Bitte stellen Sie sich Ihrem Mitspieler kurz vor. Dieser Text wird Ihm bevor er seine Entscheidung trifft angezeigt. Sie haben dafür 400 Zeichen.
+    Es ist Ihnen verboten ihrem Mitspieler Informationen mitzuteilen die dazu führen dass er Sie identifizieren kann. Das betrifft zum Beispiel Ihren Namen oder eine
+    eindeutige Beschreibung Ihres Aussehens.
 
-    {% formfield player.social_distance_text with label=""%}
+{% formfield player.social_distance_text with label=""%}
 
 {% next_button %}
 

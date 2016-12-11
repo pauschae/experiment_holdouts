@@ -1,0 +1,21 @@
+participant.id_in_session,participant.code,participant.label,participant._is_bot,participant._index_in_pages,participant._max_page_index,participant._current_app_name,participant._round_number,participant._current_page_name,participant.ip_address,participant.time_started,participant.exclude_from_data_analysis,participant.visited,participant.mturk_worker_id,participant.mturk_assignment_id,player.id_in_group,player.n_right_guesses,player.gender,player.degree,player.econ,player.age,player.money,player.grave_mistake,player.grave_mistake_on_purpose,player.payoff,group.id_in_subsession,subsession.round_number,session.code,session.label,session.experimenter_name,session.time_scheduled,session.time_started,session.mturk_HITId,session.mturk_HITGroupId,session.comment,session.is_demo
+1,jvnjujrq,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.527980+00:00,0,1,,,1,1,weiblich,Bachelor,Ja,19,0,0,,5,1,1,3zobffsp,,,,,,,,0
+2,tlonhixt,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.585693+00:00,0,1,,,2,0,weiblich,Bachelor,Ja,19,0,0,,0,1,1,3zobffsp,,,,,,,,0
+3,rknhlgm9,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.609029+00:00,0,1,,,3,1,weiblich,Bachelor,Ja,19,1,0,,15,1,1,3zobffsp,,,,,,,,0
+4,ys9q8bpd,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.631906+00:00,0,1,,,4,0,weiblich,Bachelor,Ja,19,0,0,,0,1,1,3zobffsp,,,,,,,,0
+5,fjljzwyc,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.655723+00:00,0,1,,,5,0,weiblich,Bachelor,Ja,19,1,0,,15,1,1,3zobffsp,,,,,,,,0
+6,xiv1cd52,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.678548+00:00,0,1,,,6,1,weiblich,Bachelor,Ja,19,0,0,,5,1,1,3zobffsp,,,,,,,,0
+7,u3dbooky,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.703251+00:00,0,1,,,7,1,weiblich,Bachelor,Ja,19,2,0,,20,1,1,3zobffsp,,,,,,,,0
+8,ybm9pvjy,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.726558+00:00,0,1,,,8,0,weiblich,Bachelor,Ja,19,0,0,,0,1,1,3zobffsp,,,,,,,,0
+9,n7my9srd,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.749808+00:00,0,1,,,9,1,weiblich,Bachelor,Ja,19,1,0,,15,1,1,3zobffsp,,,,,,,,0
+10,jcuibc7p,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.773393+00:00,0,1,,,10,0,weiblich,Bachelor,Ja,19,2,0,,20,1,1,3zobffsp,,,,,,,,0
+11,ss5ulg0r,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.795984+00:00,0,1,,,11,0,weiblich,Bachelor,Ja,19,2,0,,20,1,1,3zobffsp,,,,,,,,0
+12,iuaam216,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.822074+00:00,0,1,,,12,0,weiblich,Bachelor,Ja,19,1,0,,10,1,1,3zobffsp,,,,,,,,0
+13,aookfvgz,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.845263+00:00,0,1,,,13,0,weiblich,Bachelor,Ja,19,0,0,,0,1,1,3zobffsp,,,,,,,,0
+14,bcw8cfod,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.869141+00:00,0,1,,,14,1,weiblich,Bachelor,Ja,19,0,0,,5,1,1,3zobffsp,,,,,,,,0
+15,e8yrmsn0,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.893460+00:00,0,1,,,15,1,weiblich,Bachelor,Ja,19,1,0,,15,1,1,3zobffsp,,,,,,,,0
+16,oeva6dib,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.916741+00:00,0,1,,,16,1,weiblich,Bachelor,Ja,19,1,0,,15,1,1,3zobffsp,,,,,,,,0
+17,dd0rp8gi,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.940639+00:00,0,1,,,17,1,weiblich,Bachelor,Ja,19,2,0,,20,1,1,3zobffsp,,,,,,,,0
+18,hgxj5s2y,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.964031+00:00,0,1,,,18,0,weiblich,Bachelor,Ja,19,2,0,,20,1,1,3zobffsp,,,,,,,,0
+19,t6gpo5hk,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:36.987913+00:00,0,1,,,19,0,weiblich,Bachelor,Ja,19,0,0,,0,1,1,3zobffsp,,,,,,,,0
+20,7lkx9ych,,1,72,71,payment_info,1,PaymentInfo,127.0.0.1,2016-11-30 18:59:37.010494+00:00,0,1,,,20,0,weiblich,Bachelor,Ja,19,0,0,,0,1,1,3zobffsp,,,,,,,,0

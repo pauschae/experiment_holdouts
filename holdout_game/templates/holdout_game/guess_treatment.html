@@ -1,18 +1,109 @@
 {% extends "global/Base.html" %}
 {% load staticfiles otree_tags %}
 
-{% block title %} Angabe der Kosten {% endblock %}
+{% block title %}
+    Einschätzung
+{% endblock %}
+
+{% block styles %}
+<link href="{% static "holdout_game/jquery-ui/jquery-ui.min.css" %}" rel="stylesheet">
+<style type="text/css">
+    .bid-slider {
+        margin: 0em auto;
+        width: 60%;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .bid {
+        text-align: left;
+    }
+    .payoff {
+        margin: 1.5em 0;
+    }
+    #custom-handle {
+        width: 3em;
+        height: 1.6em;
+        top: 50%;
+        margin-top: -.8em;
+        text-align: center;
+        line-height: 1.6em;
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "holdout_game/jquery-ui/jquery-ui.min.js" %}"></script>
+<script>
+jQuery(document).ready(function ($) {
+    var input = $('#id_bid_amount');
+    var handle = $('#custom-handle');
+
+    $('.bid-slider').slider({
+        min: 0,
+        max: 1,
+        step: 0.1,
+        create: function() {
+            handle.text( $( this ).slider( "value" ) );
+        },
+        slide: function (event, ui) {
+            input.val(ui.value);
+            handle.text(ui.value);
+            updateBidValue();
+        }
+    });
+
+    function round(value, decimals) {
+         return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+    };
+
+    function updateBidValue() {
+        var r = input.val();
+        var lpayoff = round(5*(1+2*r-Math.pow(r,2)-Math.pow(1-r,2)), 1);
+        var tpayoff = round(5*(1+2*(1-r)-Math.pow(r,2)-Math.pow(1-r,2)), 1);
+        $('.r').text(r);
+        $('.lying-payoff').text(lpayoff);
+        $('.truth-payoff').text(tpayoff);
+    }
+     updateBidValue();
+});
+
+
+</script>
+{% endblock %}
 
 {% block content %}
 
-<p>
-    Nehmen sie an ihrem Mitspieler entstehen keine Kosten durch die Reform. Denken sie er lügt und gibt trotzdem an Kosten von 20 zu haben?
-    Im Fall das ihrem Mitspieler tatsächlich keine Kosten entstehen bekommen sie für die richtige Antwort eine zusätzliche Auszahlung von 10 Talern.
-</p>
+    <div class="form-group required">
 
+    <div class="instructions well well-lg">
+     <p>
+    Nehmen Sie an Ihrem Mitspieler entstehen tatsächlich keine Kosten durch die Reform.
+        Sie haben nun die Möglichkeit einen kleinen Zusatzbetrag zu verdienen indem Sie raten wie er sich in diesem Fall verhalten wird. Der verdiente Betrag wird Ihnen ausgezahlt wenn
+        die zweite Runde des Spiels zur Auszahlung ausgewählt wird. Denken Sie ihr Mitspieler fordert gibt trotzdem an Kosten von {{ Constants.cbar }} zu haben? Sie haben die Möglichkeit anzugeben wie sicher Sie sich in ihrer Einschätzung sind.
+        Sie können ihre Erwartung am unten abgebildeten Slider einstellen. Unter dem Slider finden sie Auskunft darüber welche Auszahlung sie bekommen falls ihr Mitspieler
+        wirklich Kosten von 0 hat und angibt Kosten von {{ Constants.cbar }} bzw. 0 zu haben. Falls sie den Slider ganz links einstellen bedeutet das dass sie sich sicher sind, dass
+        ihr Mitspieler kosten von 0 angeben wird. Falls Sie den Slider ganz rechts einstellen bedeutet das, dass Sie sich sicher sind das ihr Mitspieler Kosten von {{ Constants.cbar }} angeben wird.
+        Der Knopf des Sliders zeigt ihnen die Wahrscheinlichkeit an mit der Sie denken das ihr Mitspieler Kosten von {{ Constants.cbar }} angeben wird, gegeben das er Kosten von Null hat.
+    </p>
+     </div class="instructions well well-lg">
+        <label class="control-label" for="id_bid_amount">Bitte geben Sie an wie sicher Sie sich sind das ihr Mitspieler Kompensation fordert:</label>
+        <div class="controls">
+            <input type="hidden" name="guess_prob" id="id_bid_amount" value="0">
+            <strong>  Sicher nicht    <div class="bid-slider"> <div id="custom-handle" class="ui-slider-handle"></div></div>   Sicher  </strong>
+            <div class="bid">Ihre Auszahlung wenn ihr Mitspieler Kosten 0  hat und und Kosten von 0 angeben wird: <strong><span class="truth-payoff"></span> Taler </strong></div>
+            <div class="bid">Ihre Auszahlung wenn ihr Mitspieler Kosten 0  hat und und Kosten von {{ Constants.cbar }} angibt: <strong><span class="lying-payoff"></span> Taler </strong></div>
+        </div>
+    </div>
 
-{% formfield player.kompensation_guess %}
+    {% next_button %}
 
-{% next_button %}
 
 {% endblock %}
+
+
+
+
+
+
+

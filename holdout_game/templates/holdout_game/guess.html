@@ -1,0 +1,27 @@
+
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Angabe der Kosten {% endblock %}
+
+{% block content %}
+
+<p>
+    Nehmen Sie an Ihrem Mitspieler entstehen tatsächlich keine Kosten durch die Reform. Denken Sie er fordert trotzdem eine Kompensation?
+    Im Fall, dass Ihrem Mitspieler tatsächlich keine Kosten entstehen bekommen Sie für die richtige Antwort eine zusätzliche Auszahlung von {{ Constants.reward }} Talern.
+    Diese Zahlung ist unabhängig davon welches Spiel zur Auswertung ausgewählt wird.
+</p>
+
+
+{% formfield player.kompensation_guess with label="" %}
+
+
+<p>
+Mit welcher Wahrscheinlichkeit denken sie das sie bei der obigen Frage richtig geraten haben?
+</p>
+ {% formfield player.guess_prob with label="" %}
+
+
+{% next_button %}
+
+{% endblock %}

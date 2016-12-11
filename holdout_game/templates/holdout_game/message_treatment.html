@@ -6,12 +6,12 @@
 {% block content %}
 
 <p>
-    Nun haben sie die Möglichkeite ihre Kosten aus der Reform anzugeben. Diese Angabe wird nur zur Bestimmung der Kompensationszahlungen herangezogen.
-    Das beinhaltet die Entscheidung ob die Reform durchgeführt wird.
+    Nun haben Sie die Möglichkeite ihre Kosten aus der Reform anzugeben. Die hier getroffene Angabe wird ihrem Mitspieler als Nachricht gesendet.
+    Sie wird zusätzlich zur Bestimmung der Kompensationszahlungen herangezogen. Das beinhaltet die Entscheidung ob die Reform durchgeführt wird.
+    Zur Erinnerung ihre Kosten sind {{ player.cost }}.
 </p>
 
-
-{% formfield player.message_t with label="Wie hoch sind ihre Kosten aus der Reform?" %}
+{% formfield player.message_t with label="Welche Nachricht möchten sie ihrem Mitspieler schicken?" %}
 
 {% next_button %}
 

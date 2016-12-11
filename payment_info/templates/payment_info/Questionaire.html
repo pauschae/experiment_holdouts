@@ -1,0 +1,20 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %} Ausgangsfragebogen {% endblock %}
+
+{% block content %}
+
+<p>
+Bitte beantworten Sie noch die folgenden Fragen.
+</p>
+
+
+{% formfield player.gender with label="Was ist Ihr Geschlecht?" %}
+{% formfield player.age with label="Wie alt sind Sie?" %}
+{% formfield player.econ with label="Studieren Sie oder haben Sie schon ein oder mehrere Semester Volkswirtschaftslehre studiert?" %}
+{% formfield player.degree with label="Was ist Ihr höchster bereits erlangter Abschluss?" %}
+
+{% next_button %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}  {% endblock %}
+
+{% block content %}
+
+<p>
+    Geben Sie bitte an ob Sie wissen wer Ihr Mitspieler ist. Diese Angabe hat keinerlei Einfluss auf ihre Auszahlung.
+</p>
+
+
+{% formfield player.know_partner with label="Kennen sie ihren Mitspieler?" %}
+
+{% next_button %}
+
+{% endblock %}
