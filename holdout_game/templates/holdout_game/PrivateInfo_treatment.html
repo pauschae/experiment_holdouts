@@ -9,9 +9,12 @@
     Für den Fall das die Reform durchgeführt wird entstehen Ihnen Kosten in Höhe von <b> {{ player.cost }} Talern. </b>
 </p>
 
+<div class="instructions well well-lg">
+
 <p>
 Zur Erinnerung hier noch einmal eine Tabelle mit Ihren Auszahlungen abhängig von Ihrer und der Nachricht Ihres Mitspielers.
 </p>
+
 
 <style type="text/css">
 table.fixed {border-collapse:collapse;border-spacing:0;}
@@ -38,6 +41,9 @@ table.fixed td {overflow:hidden;}/*Hide text outside the cell.*/
     <td class="tg-yw4l">{{ player.bb }}</td>
   </tr>
 </table>
+
+</div class="instructions well well-lg">
+
 {% next_button %}
 
 {% endblock %}
