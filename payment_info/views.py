@@ -6,8 +6,7 @@ from .models import Constants
 class BeginWaitPage(WaitPage):
     def after_all_players_arrive(self):
         for p in self.group.get_players():
-            p.n_right_guesses = p.participant.vars['n_right_guesses']
-            p.payoff = p.n_right_guesses*Constants.reward + p.participant.vars['final_pay_off']
+            p.payoff = p.participant.vars['final_pay_off']
             p.money = p.payoff.to_real_world_currency(self.session)
             p.set_grave_mistake()
 

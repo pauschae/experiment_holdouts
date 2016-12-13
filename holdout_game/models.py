@@ -11,7 +11,6 @@ doc = """
 Your app description
 """
 
-
 class Constants(BaseConstants):
     name_in_url = 'holdout_game'
     players_per_group = 2
@@ -27,7 +26,7 @@ class Constants(BaseConstants):
     ab = int(vminuscbar -cbar)
     ba = int(cbar - cbar)
     bb = 0
-
+    control_first = True #set this to True if controll should allways be the first treatment
 
 class Subsession(BaseSubsession):
     n_groups = models.PositiveIntegerField()
@@ -35,14 +34,18 @@ class Subsession(BaseSubsession):
         self.n_groups = len(self.get_groups())
         if self.round_number == 1:
             # counterbalance treatments
-            order_list = self.n_groups * [True] + self.n_groups * [False]
-            order_list = numpy.random.permutation(order_list).tolist()
+            if Constants.control_first or (self.n_groups == 1):
+               order_list = 2*self.n_groups*True
+
+            else:
+                order_list = self.n_groups * [True] + self.n_groups * [False]
+                order_list = numpy.random.permutation(order_list).tolist()
 
             # player random variables
             for i, player in enumerate(self.get_players()):
                 player.cost = numpy.random.choice([Constants.cbar, 0], 1, replace=False,
                                                   p=[Constants.p, 1 - Constants.p])
-                #for showing individualized table
+                #for showing individualized pay-off table
                 player.aa = player.aa - player.cost
                 player.ab = player.ab - player.cost
                 player.ba = player.ba - player.cost
@@ -50,8 +53,7 @@ class Subsession(BaseSubsession):
 
                 if self.n_groups > 1:
                     player.controll_first = order_list[i]
-                else:
-                    player.controll_first = [True, True]
+
             if self.n_groups > 1:
                 # regroup by treatment
                 treatment_first_players = list(compress(range(2 * self.n_groups), order_list))
@@ -123,25 +125,28 @@ class Group(BaseGroup):
                     p.payoff_prelim = Constants.vminuscbar - p.cost
             if not self.provision:
                 p.payoff_prelim = 0
+            #add show-up fee
+                p.payoff_prelim = p.payoff_prelim + Constants.cbar - Constants.vminuscbar
+
         for p in self.get_players():
             # set pay-offs from guessing
             partner = p.get_partner()
-            rguess = ((partner.cost == 0) and (partner.message == 0) and (p.kompensation_guess == "nein")) or ((partner.cost == 0) and (partner.message == Constants.cbar) and (p.kompensation_guess == "ja"))
-            if rguess:
-                p.right_guess = True
-            if not rguess:
-                p.right_guess = False
+            if partner.cost == 0 and partner.message == 0:
+                guessing_payoff = 5*(1+2*p.guess_prob-p.guess_prob^2-(1-p.guess_prob)^2)
+            if partner.cost == 0 and partner.message == Constants.cbar:
+                guessing_payoff = 5 * (1 + 2 *(1-p.guess_prob) - p.guess_prob ^ 2 - (1 - p.guess_prob) ^ 2)
+            if partner.cost == Constants.cbar:
+                guessing_payoff = 0
+            p.guessing_payoff = guessing_payoff
+
         #calculate overall pay-off in round 2
         if self.round_number == 2:
             for p in self.get_players():
                 #choose one round at random
                 pay_off_round = random.choice([1,2])
                 #save pay-off from that round in participant.vars
-                p.participant.vars['final_pay_off'] = p.in_round(pay_off_round).payoff_prelim
-                #count number of right guesse
-                p.participant.vars['n_right_guesses'] = 0
-                for q in p.in_previous_rounds():
-                    p.participant.vars['n_right_guesses'] = p.participant.vars['n_right_guesses'] + int(q.right_guess)
+                p.participant.vars['final_pay_off'] = p.in_round(pay_off_round).payoff_prelim + p.in_round(pay_off_round % 2+1).guessing_payoff
+
 
 class Player(BasePlayer):
     def get_partner(self):
@@ -152,35 +157,47 @@ class Player(BasePlayer):
     cost = models.PositiveIntegerField(
         choices=[0, Constants.cbar]
     )
+
     message_t = models.CharField(
         choices=["Ich habe keine Kosten aus der Reform. Du kannst mir vertrauen.",
                  "Die Reform kostet mich " + str(Constants.cbar)  + " Taler. Du kannst mir vertrauen."]
     )
+
     message_c = models.CharField(
         choices=["ja", "nein"]
     )
+
     message = models.PositiveIntegerField(
         choices=[0, Constants.cbar]
     )
+
     controll_first = models.BooleanField()
+
     controll_now = models.BooleanField()
+
     kompensation_guess = models.CharField(
         choices=["ja", "nein"]
     )
-    right_guess = models.BooleanField()
+
+    guessing_payoff = models.CurrencyField()
+
     q1 = models.CharField(
         choices=["wahr", "falsch"]
     )
+
     q2 = models.CharField(
         choices=["wahr", "falsch"]
     )
+
     q3 = models.CharField(
         choices=["wahr", "falsch"]
     )
+
     show = models.TextField()
     know_partner =  models.CharField(
         choices=["ja", "nein"]
     )
+
     partner_message_t = models.CharField(
         choices=["Ich habe keine Kosten aus der Reform. Du kannst mir vertrauen.",
                   "Die Reform kostet mich " + str(Constants.cbar)  + " Taler. Du kannst mir vertrauen."]
